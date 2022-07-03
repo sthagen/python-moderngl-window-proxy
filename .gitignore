@@ -127,3 +127,11 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Local artifacts
+*~
+.idea
+.vscode/
+current-bandit.json
+local/
+local_*
