@@ -2,7 +2,7 @@ SHELL = /bin/bash
 
 .DEFAULT_GOAL := all
 isort = isort test
-black = black -S -l 120 --target-version py310 test
+black = black -S -l 120 --target-version py39 test
 flake8 = flake8 test
 pytest = pytest --asyncio-mode=strict --log-format="%(levelname)s %(message)s"
 
