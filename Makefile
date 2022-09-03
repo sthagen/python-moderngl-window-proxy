@@ -49,3 +49,8 @@ clean:
 	@rm -f `find . -type f -name '.*~' `
 	@rm -rf .cache htmlcov *.egg-info build dist/*
 	@rm -f .coverage .coverage.* *.log current-bandit.json
+
+.PHONY: name
+name:
+	@printf "Revision.is(): sha1:%s\n" "$$(git rev-parse HEAD)"
+	@printf "Name.derive(): '%s'\n" "$$(git-release-name "$$(git rev-parse HEAD)")"
