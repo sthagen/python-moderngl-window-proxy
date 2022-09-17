@@ -1,5 +1,5 @@
 PySDL2==0.9.14
 glfw==2.5.5
-moderngl-window==2.4.1
+moderngl-window==2.4.2
 pygame==2.1.2
 pysdl2-dll==2.24.0
