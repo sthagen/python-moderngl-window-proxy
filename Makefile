@@ -55,3 +55,9 @@ name:
 	@printf "Release '%s'\n\n" "$$(git-release-name "$$(git rev-parse HEAD)")"
 	@printf "%s revision.is(): sha1:%s\n" "-" "$$(git rev-parse HEAD)"
 	@printf "%s name.derive(): '%s'\n" "-" "$$(git-release-name "$$(git rev-parse HEAD)")"
+
+.PHONY: dlstats
+dlstats:
+	pypistats python_minor --json --monthly $(package) > etc/monthly-downloads.json
+	rq '$$.data..*.downloads' etc/monthly-downloads.json | paste -sd+ - | bc
+	jq . etc/monthly-downloads.json > etc/tempaway && mv etc/tempaway etc/monthly-downloads.json
