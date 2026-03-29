@@ -1,7 +1,7 @@
-import moderngl_window as mglw  # type:ignore
+import moderngl_window as mglw
 
 
-class Test(mglw.WindowConfig):  # type: ignore
+class Test(mglw.WindowConfig):
     gl_version = (3, 3)
 
     def render(self, time, frametime):  # type: ignore
